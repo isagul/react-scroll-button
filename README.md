@@ -1,5 +1,4 @@
 # react-scroll-button
-Alt-H1
 ======
 
 ### Live Demo
