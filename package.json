@@ -12,12 +12,23 @@
     "deploy": "gh-pages -d example/dist",
     "publish-demo": "npm run build && npm run deploy"
   },
+  "bugs": {
+    "url": "https://github.com/isagul/react-scroll-button/issues"
+  },
+  "keywords": [
+    "scroll",
+    "react",
+    "component",
+    "react-component",
+    "scroll-up"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isagul/react-scroll-button.git"
+  },
   "author": "isagul",
   "license": "ISC",
   "devDependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.15",
-    "@fortawesome/free-solid-svg-icons": "^5.7.2",
-    "@fortawesome/react-fontawesome": "^0.1.4",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
@@ -34,5 +45,10 @@
     "webpack": "^4.29.5",
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.2.0"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.15",
+    "@fortawesome/free-solid-svg-icons": "^5.7.2",
+    "@fortawesome/react-fontawesome": "^0.1.4"
   }
 }
