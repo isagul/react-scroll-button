@@ -1,11 +1,22 @@
-### react-scroll-button
+# react-scroll-button
+Alt-H1
+======
 
 ### Live Demo
+Alt-H1
+======
+[Demo](https://isagul.github.io/react-scroll-button/))
 
 ### How to Install
+Alt-H1
+======
+[npm](https://www.npmjs.com/package/react-scroll-button)
 
-### Usage 
+## Usage 
+Alt-H1
+======
 ```
+    import React, { Component } from 'react'
     import ScrollButton 'react-scroll-button'
 
     class Test extends Component {

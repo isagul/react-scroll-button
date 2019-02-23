@@ -2,6 +2,7 @@
   "name": "react-scroll-button",
   "version": "1.0.0",
   "description": "",
+  "homepage": "https://isagul.github.io/react-scroll-button", 
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
