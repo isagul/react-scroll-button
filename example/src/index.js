@@ -1,5 +1,6 @@
 import React from 'react';
-import ScrollButton from '../../src/App';
+import { render} from 'react-dom'
+import ScrollButton from '../../src';
 
 const targetDiv = {
     padding: '5px',
@@ -75,3 +76,5 @@ export class Example extends React.Component {
         )
     }
 }
+
+render(<Example />, document.getElementById('root'));
