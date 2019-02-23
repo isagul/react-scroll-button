@@ -14,19 +14,18 @@ npm i react-scroll-button
 ## Usage 
 
 ```javascript
-    import React, {Component} from 'react'
-    import ScrollButton 'react-scroll-button'
+import React, {Component} from 'react'
+import ScrollButton from 'react-scroll-button'
 
-    class ScrollUp extends Component {
-        render() {
+class ScrollComponent extends Component {
+    render() {
         return (
             <ScrollButton 
                 behavior={'smooth'} 
                 buttonBackgroundColor={'red'}
                 iconType={'arrow-up'}
-                />
-            );
-        }
+            />
+        );
     }
 }
 ```
