@@ -7,28 +7,12 @@
 
 ### How to Install
 ======
-[npm](https://www.npmjs.com/package/react-scroll-button)
+***
 
 ## Usage 
 ======
 ```
-    import React, { Component } from 'react'
-    import ScrollButton 'react-scroll-button'
-
-    class Test extends Component {
-        render() {
-            return (
-                <ScrollButton
-                    targetId={'secondTarget'} 
-                    behavior={'smooth'} 
-                    buttonBackgroundColor={'#CD5252'} 
-                    buttonColor={'white'} 
-                    iconType={'arrow-up'}
-                    />
-                );
-            }
-        }
-    }
+    ***
 ```
 
 ### Properties
