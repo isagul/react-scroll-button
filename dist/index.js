@@ -27,8 +27,6 @@ var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
 var _reactFontawesome = require('@fortawesome/react-fontawesome');
 
-var _src = require('../example/src');
-
 var _fontawesomeSvgCore = require('@fortawesome/fontawesome-svg-core');
 
 var _freeSolidSvgIcons = require('@fortawesome/free-solid-svg-icons');
