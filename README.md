@@ -1,18 +1,34 @@
 # react-scroll-button
-======
+
 
 ### Live Demo
-======
+
 [Demo](https://isagul.github.io/react-scroll-button/)
 
 ### How to Install
-======
-***
+
+```bash
+npm i react-scroll-button
+```
 
 ## Usage 
-======
-```
-    ***
+
+```javascript
+    import React, {Component} from 'react'
+    import ReactRateComponent 'react-rate-component'
+
+    class ScrollUp extends Component {
+        render() {
+        return (
+            <ScrollButton 
+                behavior={'smooth'} 
+                buttonBackgroundColor={'red'}
+                iconType={'arrow-up'}
+                />
+            );
+        }
+    }
+}
 ```
 
 ### Properties
