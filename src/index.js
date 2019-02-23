@@ -53,8 +53,8 @@ export default class ScrollButton extends Component {
 
   handleOnPress() {
     const { targetId, behavior } = this.state;
-    if (targetId !== null && targetId !== undefined && targetId.trim().length > 0) {
-      let targetDiv = document.getElementById(`${targetId}`);
+    let targetDiv = document.getElementById(`${targetId}`);
+    if (targetDiv !== null && targetDiv !== undefined) {
       targetDiv.scrollIntoView({behavior: behavior});
     }
   };
