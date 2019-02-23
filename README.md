@@ -1,3 +1,29 @@
+### react-scroll-button
+
+### Live Demo
+
+### How to Install
+
+### Usage 
+```
+    import ScrollButton 'react-scroll-button'
+
+    class Test extends Component {
+        render() {
+            return (
+                <ScrollButton
+                    targetId={'secondTarget'} 
+                    behavior={'smooth'} 
+                    buttonBackgroundColor={'#CD5252'} 
+                    buttonColor={'white'} 
+                    iconType={'arrow-up'}
+                    />
+                );
+            }
+        }
+    }
+```
+
 ### Properties
 
 | Property  | Description | DefaultValue | Type
