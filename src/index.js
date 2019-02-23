@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import styled, { keyframes } from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Example } from '../example/src';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faArrowUp, faChevronUp, faAngleUp } from '@fortawesome/free-solid-svg-icons';
 

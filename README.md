@@ -15,7 +15,7 @@ npm i react-scroll-button
 
 ```javascript
     import React, {Component} from 'react'
-    import ReactRateComponent 'react-rate-component'
+    import ScrollButton 'react-scroll-button'
 
     class ScrollUp extends Component {
         render() {
@@ -36,7 +36,7 @@ npm i react-scroll-button
 | Property  | Description | DefaultValue | Type
 | ------------- | ------------- | ------------- | ------------- | 
 | targetId  | Id of element that you want to go  | '' | string
-| behavior | Scroll type. 'auto', 'smooth'  | smooth | string
+| behavior | Scroll type. 'auto', 'smooth'  | auto | string
 | buttonBackgorundColor | BackgroundColor of button | 'green' | string
 | buttonColor | Color of icon | 'white' | string
 | iconType | Icon type 'chevron-up', 'angle-up','arrow-up' | chevron-up | string
