@@ -1,8 +1,8 @@
 {
   "name": "react-scroll-button",
-  "version": "1.0.8",
+  "version": "1.1.1",
   "description": "",
-  "homepage": "https://isagul.github.io/react-scroll-button", 
+  "homepage": "https://isagul.github.io/react-scroll-button",
   "main": "dist/index",
   "typings": "dist/index",
   "scripts": {
@@ -28,7 +28,7 @@
     "url": "git+https://github.com/isagul/react-scroll-button.git"
   },
   "author": "isagul",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
@@ -41,7 +41,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
-    "style-loader": "^0.23.1",    
+    "style-loader": "^0.23.1",
     "webpack": "^4.29.5",
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.2.0"

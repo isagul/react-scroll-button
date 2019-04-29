@@ -71,7 +71,7 @@ export class Example extends React.Component {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies, tellus non varius tempor, ex sapien efficitur ante, feugiat ultricies ligula metus ac lectus. Morbi eget imperdiet ipsum. Aenean mattis lobortis sollicitudin. Etiam ornare rutrum mauris. Vestibulum ac auctor sem, in venenatis sem. Nulla pharetra risus vitae enim lacinia, id maximus urna congue. Mauris vestibulum hendrerit nibh eget egestas. Integer lacus massa, consequat nec urna pellentesque, pulvinar rutrum nunc. Donec nulla nisi, faucibus at mattis eu, lobortis vitae eros. Ut quis pulvinar elit. Sed pellentesque elit sed ligula fermentum malesuada. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas ante felis, ornare a mi et, consectetur blandit tellus.
             </p>
 
-            <ScrollButton targetId={'secondTarget'} behavior={'smooth'} buttonBackgroundColor={'#CD5252'} buttonColor={'white'} iconType={'arrow-up'}/>
+            <ScrollButton targetId={'firstTarget'} behavior={'smooth'} buttonBackgroundColor={'#CD5252'} buttonColor={'white'} iconType={'arrow-up'} scrollSpeed={'0.5s'}/>
         </div>
         )
     }

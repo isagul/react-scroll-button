@@ -1,5 +1,5 @@
 # react-scroll-button
-
+[![npm version](https://badge.fury.io/js/react-scroll-button.svg)](https://www.npmjs.com/package/react-scroll-button)
 
 ### Live Demo
 
@@ -39,3 +39,7 @@ class ScrollComponent extends Component {
 | buttonBackgorundColor | BackgroundColor of button | 'green' | string
 | buttonColor | Color of icon | 'white' | string
 | iconType | Icon type 'chevron-up', 'angle-up','arrow-up' | chevron-up | string
+| scrollSpeed | It specifies speed of scroll button. | '1s' | string
+
+License
+MIT

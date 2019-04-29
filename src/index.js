@@ -18,6 +18,7 @@ export default class ScrollButton extends Component {
       buttonBackgroundColor: props.buttonBackgroundColor,
       buttonColor: props.buttonColor,
       iconType: props.iconType,
+      scrollSpeed: props.scrollSpeed,
       isButtonShow: false
     }
 
@@ -71,6 +72,7 @@ export default class ScrollButton extends Component {
                 onClick={handleOnPress}
                 buttonColor = {config.buttonColor}
                 buttonBackgrundColor = {config.buttonBackgroundColor}
+                scrollSpeed = {config.scrollSpeed}
                 >
                 <FontAwesomeIcon icon={config.iconType}/>
             </ButtonDefaultStyle>
@@ -99,7 +101,6 @@ const ButtonDefaultStyle = styled.button `
   position: fixed;
   right:0;
   bottom:0;
-  opacity:0.9;
   margin-bottom: 2%;
   border:none;
   height:35px;
@@ -108,7 +109,7 @@ const ButtonDefaultStyle = styled.button `
   cursor: pointer;
   outline:0;
   animation: ${buttonAnimate};
-  animation-duration: 1s;
+  animation-duration:  ${(props) => props.scrollSpeed};
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 `;
@@ -118,7 +119,8 @@ ScrollButton.propTypes = {
   behavior: PropTypes.string,
   buttonBackgroundColor: PropTypes.string,
   buttonColor: PropTypes.string,
-  iconType: PropTypes.string
+  iconType: PropTypes.string,
+  scrollSpeed: PropTypes.string
 };
 
 ScrollButton.defaultProps = {
@@ -126,6 +128,7 @@ ScrollButton.defaultProps = {
   buttonBackgroundColor: 'green',  
   buttonColor: 'white',
   iconType: 'chevron-up',
-  targetId: ''
+  targetId: '',
+  scrollSpeed: '1s'
 };
 
