@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.index {
+    font-family: 'Roboto';
+    margin: 10px;
+}
+
+.user-interaction-area {
+    margin-bottom: 1rem;
+}
+.user-interaction-area input {
+    padding: 8px 5px;
+    border-radius: 3px;
+    border:1px solid lightblue;
+}

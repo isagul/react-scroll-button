@@ -1,78 +1,64 @@
-import React from 'react';
-import { render} from 'react-dom'
+import React, { Component } from 'react';
+import { render } from 'react-dom'
 import ScrollButton from '../../src';
+import './index.css';
 
-const targetDiv = {
-    padding: '5px',
-    color:'white',
-    backgroundColor:'black'
-}
+const items = ['red', 'green', 'blue', 'yellow', 'orange', 'lightblue', 'purple', 'lightgreen'];
 
-const generalStyle = {
-    textAlign:'center',
-}
+export class Example extends Component {
+    constructor(props) {
+        super(props);
 
-export class Example extends React.Component {
-    render(){
+        this.state = {
+            targetID: 'red'
+        }
+
+        this.handleDivID = this.handleDivID.bind(this)
+    }
+
+    handleDivID(e) {
+        this.setState({
+            targetID: e.target.value
+        })
+    }
+
+    render() {
         return (
-        <div style={generalStyle}>
-            <h1>React Scroll Component</h1>
-            <p id="firstTarget" style={targetDiv}>First Target</p>
-            <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies, tellus non varius tempor, ex sapien efficitur ante, feugiat ultricies ligula metus ac lectus. Morbi eget imperdiet ipsum. Aenean mattis lobortis sollicitudin. Etiam ornare rutrum mauris. Vestibulum ac auctor sem, in venenatis sem. Nulla pharetra risus vitae enim lacinia, id maximus urna congue. Mauris vestibulum hendrerit nibh eget egestas. Integer lacus massa, consequat nec urna pellentesque, pulvinar rutrum nunc. Donec nulla nisi, faucibus at mattis eu, lobortis vitae eros. Ut quis pulvinar elit. Sed pellentesque elit sed ligula fermentum malesuada. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas ante felis, ornare a mi et, consectetur blandit tellus.
-            </p>
-            <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies, tellus non varius tempor, ex sapien efficitur ante, feugiat ultricies ligula metus ac lectus. Morbi eget imperdiet ipsum. Aenean mattis lobortis sollicitudin. Etiam ornare rutrum mauris. Vestibulum ac auctor sem, in venenatis sem. Nulla pharetra risus vitae enim lacinia, id maximus urna congue. Mauris vestibulum hendrerit nibh eget egestas. Integer lacus massa, consequat nec urna pellentesque, pulvinar rutrum nunc. Donec nulla nisi, faucibus at mattis eu, lobortis vitae eros. Ut quis pulvinar elit. Sed pellentesque elit sed ligula fermentum malesuada. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas ante felis, ornare a mi et, consectetur blandit tellus.
-            </p>
-            <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies, tellus non varius tempor, ex sapien efficitur ante, feugiat ultricies ligula metus ac lectus. Morbi eget imperdiet ipsum. Aenean mattis lobortis sollicitudin. Etiam ornare rutrum mauris. Vestibulum ac auctor sem, in venenatis sem. Nulla pharetra risus vitae enim lacinia, id maximus urna congue. Mauris vestibulum hendrerit nibh eget egestas. Integer lacus massa, consequat nec urna pellentesque, pulvinar rutrum nunc. Donec nulla nisi, faucibus at mattis eu, lobortis vitae eros. Ut quis pulvinar elit. Sed pellentesque elit sed ligula fermentum malesuada. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas ante felis, ornare a mi et, consectetur blandit tellus.
-            </p>
-            <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies, tellus non varius tempor, ex sapien efficitur ante, feugiat ultricies ligula metus ac lectus. Morbi eget imperdiet ipsum. Aenean mattis lobortis sollicitudin. Etiam ornare rutrum mauris. Vestibulum ac auctor sem, in venenatis sem. Nulla pharetra risus vitae enim lacinia, id maximus urna congue. Mauris vestibulum hendrerit nibh eget egestas. Integer lacus massa, consequat nec urna pellentesque, pulvinar rutrum nunc. Donec nulla nisi, faucibus at mattis eu, lobortis vitae eros. Ut quis pulvinar elit. Sed pellentesque elit sed ligula fermentum malesuada. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas ante felis, ornare a mi et, consectetur blandit tellus.
-            </p>
-            <p>
-            <p id="secondTarget" style={targetDiv}>Second Target</p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies, tellus non varius tempor, ex sapien efficitur ante, feugiat ultricies ligula metus ac lectus. Morbi eget imperdiet ipsum. Aenean mattis lobortis sollicitudin. Etiam ornare rutrum mauris. Vestibulum ac auctor sem, in venenatis sem. Nulla pharetra risus vitae enim lacinia, id maximus urna congue. Mauris vestibulum hendrerit nibh eget egestas. Integer lacus massa, consequat nec urna pellentesque, pulvinar rutrum nunc. Donec nulla nisi, faucibus at mattis eu, lobortis vitae eros. Ut quis pulvinar elit. Sed pellentesque elit sed ligula fermentum malesuada. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas ante felis, ornare a mi et, consectetur blandit tellus.
-            </p>
-            <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies, tellus non varius tempor, ex sapien efficitur ante, feugiat ultricies ligula metus ac lectus. Morbi eget imperdiet ipsum. Aenean mattis lobortis sollicitudin. Etiam ornare rutrum mauris. Vestibulum ac auctor sem, in venenatis sem. Nulla pharetra risus vitae enim lacinia, id maximus urna congue. Mauris vestibulum hendrerit nibh eget egestas. Integer lacus massa, consequat nec urna pellentesque, pulvinar rutrum nunc. Donec nulla nisi, faucibus at mattis eu, lobortis vitae eros. Ut quis pulvinar elit. Sed pellentesque elit sed ligula fermentum malesuada. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas ante felis, ornare a mi et, consectetur blandit tellus.
-            </p>
-            <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies, tellus non varius tempor, ex sapien efficitur ante, feugiat ultricies ligula metus ac lectus. Morbi eget imperdiet ipsum. Aenean mattis lobortis sollicitudin. Etiam ornare rutrum mauris. Vestibulum ac auctor sem, in venenatis sem. Nulla pharetra risus vitae enim lacinia, id maximus urna congue. Mauris vestibulum hendrerit nibh eget egestas. Integer lacus massa, consequat nec urna pellentesque, pulvinar rutrum nunc. Donec nulla nisi, faucibus at mattis eu, lobortis vitae eros. Ut quis pulvinar elit. Sed pellentesque elit sed ligula fermentum malesuada. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas ante felis, ornare a mi et, consectetur blandit tellus.
-            </p>
-            <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies, tellus non varius tempor, ex sapien efficitur ante, feugiat ultricies ligula metus ac lectus. Morbi eget imperdiet ipsum. Aenean mattis lobortis sollicitudin. Etiam ornare rutrum mauris. Vestibulum ac auctor sem, in venenatis sem. Nulla pharetra risus vitae enim lacinia, id maximus urna congue. Mauris vestibulum hendrerit nibh eget egestas. Integer lacus massa, consequat nec urna pellentesque, pulvinar rutrum nunc. Donec nulla nisi, faucibus at mattis eu, lobortis vitae eros. Ut quis pulvinar elit. Sed pellentesque elit sed ligula fermentum malesuada. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas ante felis, ornare a mi et, consectetur blandit tellus.
-            </p>
-            <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies, tellus non varius tempor, ex sapien efficitur ante, feugiat ultricies ligula metus ac lectus. Morbi eget imperdiet ipsum. Aenean mattis lobortis sollicitudin. Etiam ornare rutrum mauris. Vestibulum ac auctor sem, in venenatis sem. Nulla pharetra risus vitae enim lacinia, id maximus urna congue. Mauris vestibulum hendrerit nibh eget egestas. Integer lacus massa, consequat nec urna pellentesque, pulvinar rutrum nunc. Donec nulla nisi, faucibus at mattis eu, lobortis vitae eros. Ut quis pulvinar elit. Sed pellentesque elit sed ligula fermentum malesuada. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas ante felis, ornare a mi et, consectetur blandit tellus.
-            </p>
-            <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies, tellus non varius tempor, ex sapien efficitur ante, feugiat ultricies ligula metus ac lectus. Morbi eget imperdiet ipsum. Aenean mattis lobortis sollicitudin. Etiam ornare rutrum mauris. Vestibulum ac auctor sem, in venenatis sem. Nulla pharetra risus vitae enim lacinia, id maximus urna congue. Mauris vestibulum hendrerit nibh eget egestas. Integer lacus massa, consequat nec urna pellentesque, pulvinar rutrum nunc. Donec nulla nisi, faucibus at mattis eu, lobortis vitae eros. Ut quis pulvinar elit. Sed pellentesque elit sed ligula fermentum malesuada. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas ante felis, ornare a mi et, consectetur blandit tellus.
-            </p>
-            <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies, tellus non varius tempor, ex sapien efficitur ante, feugiat ultricies ligula metus ac lectus. Morbi eget imperdiet ipsum. Aenean mattis lobortis sollicitudin. Etiam ornare rutrum mauris. Vestibulum ac auctor sem, in venenatis sem. Nulla pharetra risus vitae enim lacinia, id maximus urna congue. Mauris vestibulum hendrerit nibh eget egestas. Integer lacus massa, consequat nec urna pellentesque, pulvinar rutrum nunc. Donec nulla nisi, faucibus at mattis eu, lobortis vitae eros. Ut quis pulvinar elit. Sed pellentesque elit sed ligula fermentum malesuada. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas ante felis, ornare a mi et, consectetur blandit tellus.
-            </p>
-            <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies, tellus non varius tempor, ex sapien efficitur ante, feugiat ultricies ligula metus ac lectus. Morbi eget imperdiet ipsum. Aenean mattis lobortis sollicitudin. Etiam ornare rutrum mauris. Vestibulum ac auctor sem, in venenatis sem. Nulla pharetra risus vitae enim lacinia, id maximus urna congue. Mauris vestibulum hendrerit nibh eget egestas. Integer lacus massa, consequat nec urna pellentesque, pulvinar rutrum nunc. Donec nulla nisi, faucibus at mattis eu, lobortis vitae eros. Ut quis pulvinar elit. Sed pellentesque elit sed ligula fermentum malesuada. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas ante felis, ornare a mi et, consectetur blandit tellus.
-            </p>
-            <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies, tellus non varius tempor, ex sapien efficitur ante, feugiat ultricies ligula metus ac lectus. Morbi eget imperdiet ipsum. Aenean mattis lobortis sollicitudin. Etiam ornare rutrum mauris. Vestibulum ac auctor sem, in venenatis sem. Nulla pharetra risus vitae enim lacinia, id maximus urna congue. Mauris vestibulum hendrerit nibh eget egestas. Integer lacus massa, consequat nec urna pellentesque, pulvinar rutrum nunc. Donec nulla nisi, faucibus at mattis eu, lobortis vitae eros. Ut quis pulvinar elit. Sed pellentesque elit sed ligula fermentum malesuada. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas ante felis, ornare a mi et, consectetur blandit tellus.
-            </p>
-            <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies, tellus non varius tempor, ex sapien efficitur ante, feugiat ultricies ligula metus ac lectus. Morbi eget imperdiet ipsum. Aenean mattis lobortis sollicitudin. Etiam ornare rutrum mauris. Vestibulum ac auctor sem, in venenatis sem. Nulla pharetra risus vitae enim lacinia, id maximus urna congue. Mauris vestibulum hendrerit nibh eget egestas. Integer lacus massa, consequat nec urna pellentesque, pulvinar rutrum nunc. Donec nulla nisi, faucibus at mattis eu, lobortis vitae eros. Ut quis pulvinar elit. Sed pellentesque elit sed ligula fermentum malesuada. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas ante felis, ornare a mi et, consectetur blandit tellus.
-            </p>
-            <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies, tellus non varius tempor, ex sapien efficitur ante, feugiat ultricies ligula metus ac lectus. Morbi eget imperdiet ipsum. Aenean mattis lobortis sollicitudin. Etiam ornare rutrum mauris. Vestibulum ac auctor sem, in venenatis sem. Nulla pharetra risus vitae enim lacinia, id maximus urna congue. Mauris vestibulum hendrerit nibh eget egestas. Integer lacus massa, consequat nec urna pellentesque, pulvinar rutrum nunc. Donec nulla nisi, faucibus at mattis eu, lobortis vitae eros. Ut quis pulvinar elit. Sed pellentesque elit sed ligula fermentum malesuada. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas ante felis, ornare a mi et, consectetur blandit tellus.
-            </p>
-            <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies, tellus non varius tempor, ex sapien efficitur ante, feugiat ultricies ligula metus ac lectus. Morbi eget imperdiet ipsum. Aenean mattis lobortis sollicitudin. Etiam ornare rutrum mauris. Vestibulum ac auctor sem, in venenatis sem. Nulla pharetra risus vitae enim lacinia, id maximus urna congue. Mauris vestibulum hendrerit nibh eget egestas. Integer lacus massa, consequat nec urna pellentesque, pulvinar rutrum nunc. Donec nulla nisi, faucibus at mattis eu, lobortis vitae eros. Ut quis pulvinar elit. Sed pellentesque elit sed ligula fermentum malesuada. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas ante felis, ornare a mi et, consectetur blandit tellus.
-            </p>
-            <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies, tellus non varius tempor, ex sapien efficitur ante, feugiat ultricies ligula metus ac lectus. Morbi eget imperdiet ipsum. Aenean mattis lobortis sollicitudin. Etiam ornare rutrum mauris. Vestibulum ac auctor sem, in venenatis sem. Nulla pharetra risus vitae enim lacinia, id maximus urna congue. Mauris vestibulum hendrerit nibh eget egestas. Integer lacus massa, consequat nec urna pellentesque, pulvinar rutrum nunc. Donec nulla nisi, faucibus at mattis eu, lobortis vitae eros. Ut quis pulvinar elit. Sed pellentesque elit sed ligula fermentum malesuada. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas ante felis, ornare a mi et, consectetur blandit tellus.
-            </p>
+            <div className="index">
+                <div className="user-interaction-area">
+                    <label>Change Target ID: </label>
+                    <input type="text" onChange={this.handleDivID} placeholder="red is default" />
+                </div>
+                <div className="items">
+                    {
+                        items.map((item, index) => {
+                            return (
+                                <div key={index} id={`${item}`}
+                                    style={{
+                                        display: 'flex',
+                                        justifyContent: 'center',
+                                        alignItems: 'center',
+                                        backgroundColor: `${item}`,
+                                        height: '400px',
+                                        width: '400px',
+                                        fontWeight: '600'
+                                    }}>
+                                    ID => {item}
+                                </div>
+                            )
+                        })
+                    }
+                </div>
 
-            <ScrollButton targetId={'firstTarget'} behavior={'smooth'} buttonBackgroundColor={'#CD5252'} buttonColor={'white'} iconType={'arrow-up'} scrollSpeed={'0.5s'}/>
-        </div>
+                <ScrollButton
+                    targetId={this.state.targetID}
+                    behavior={'smooth'}
+                    buttonBackgroundColor={'#CD5252'}
+                    buttonColor={'white'}
+                    iconType={'arrow-up'}
+                    scrollSpeed={'0.5s'}
+                />
+            </div>
         )
     }
 }

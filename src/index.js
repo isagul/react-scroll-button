@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import styled, { keyframes } from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -19,11 +18,18 @@ export default class ScrollButton extends Component {
       buttonColor: props.buttonColor,
       iconType: props.iconType,
       scrollSpeed: props.scrollSpeed,
-      isButtonShow: false
+      isButtonShow: false,
+      style: props.style
     }
 
     this.handleOnScroll= this.handleOnScroll.bind(this);
     this.handleOnPress= this.handleOnPress.bind(this);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      targetId: nextProps.targetId
+    })
   }
 
   componentDidMount(){
@@ -65,19 +71,16 @@ export default class ScrollButton extends Component {
       const {isButtonShow} = config;
 
       return (
-        <div>
-          {
             isButtonShow &&
             <ButtonDefaultStyle
                 onClick={handleOnPress}
                 buttonColor = {config.buttonColor}
                 buttonBackgrundColor = {config.buttonBackgroundColor}
                 scrollSpeed = {config.scrollSpeed}
+                style = {config.style}
                 >
                 <FontAwesomeIcon icon={config.iconType}/>
-            </ButtonDefaultStyle>
-          }           
-        </div>       
+            </ButtonDefaultStyle>      
       )
     }
     return (
@@ -112,6 +115,9 @@ const ButtonDefaultStyle = styled.button `
   animation-duration:  ${(props) => props.scrollSpeed};
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 ScrollButton.propTypes = {
@@ -120,7 +126,8 @@ ScrollButton.propTypes = {
   buttonBackgroundColor: PropTypes.string,
   buttonColor: PropTypes.string,
   iconType: PropTypes.string,
-  scrollSpeed: PropTypes.string
+  scrollSpeed: PropTypes.string,
+  style: PropTypes.object
 };
 
 ScrollButton.defaultProps = {
@@ -129,6 +136,7 @@ ScrollButton.defaultProps = {
   buttonColor: 'white',
   iconType: 'chevron-up',
   targetId: '',
-  scrollSpeed: '1s'
+  scrollSpeed: '1s',
+  style: {}
 };
 

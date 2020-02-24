@@ -24,6 +24,7 @@ class ScrollComponent extends Component {
                 behavior={'smooth'} 
                 buttonBackgroundColor={'red'}
                 iconType={'arrow-up'}
+                style= {{fontSize: '24px'}}
             />
         );
     }
@@ -40,6 +41,7 @@ class ScrollComponent extends Component {
 | buttonColor | Color of icon | 'white' | string
 | iconType | Icon type 'chevron-up', 'angle-up','arrow-up' | chevron-up | string
 | scrollSpeed | It specifies speed of scroll button. | '1s' | string
+| style | Write custom css properties | { } | object
 
 License
 MIT

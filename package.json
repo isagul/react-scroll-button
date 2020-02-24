@@ -1,7 +1,7 @@
 {
   "name": "react-scroll-button",
   "version": "1.1.1",
-  "description": "",
+  "description": "Show a scroll button when you scrolled the page.",
   "homepage": "https://isagul.github.io/react-scroll-button",
   "main": "dist/index",
   "typings": "dist/index",
