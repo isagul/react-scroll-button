@@ -25,6 +25,11 @@ export class Example extends Component {
     render() {
         return (
             <div className="index">
+                <div className="github-area">
+                    <a href="https://github.com/isagul/react-scroll-button" target="_blank" rel="noopener noreferrer">
+                        <p>View On Github</p>
+                    </a>
+                </div>
                 <div className="user-interaction-area">
                     <label>Change Target ID: </label>
                     <input type="text" onChange={this.handleDivID} placeholder="red is default" />

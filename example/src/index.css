@@ -9,6 +9,32 @@ body {
     margin: 10px;
 }
 
+.index .github-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25px;
+    width: 175px;
+    position: fixed;
+    background-color: black;
+    cursor: pointer;
+    right: -35px;
+    top: 25px;
+    font-size: 13px;
+    cursor: pointer;
+    transform: rotate(35deg);
+    transition: all 0.1s;
+}
+
+.index .github-area:hover {
+    transform: rotate(35deg) scale(1.1);
+}
+
+.index .github-area a {
+    color: white;
+    text-decoration: none;
+}
+
 .user-interaction-area {
     margin-bottom: 1rem;
 }
