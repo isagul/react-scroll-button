@@ -43,3 +43,13 @@ body {
     border-radius: 3px;
     border:1px solid lightblue;
 }
+
+.boxes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    height: 400px;
+    width: 100%;
+    font-weight: 600
+}

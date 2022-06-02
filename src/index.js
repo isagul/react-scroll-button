@@ -1,93 +1,78 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faArrowUp, faChevronUp, faAngleUp } from '@fortawesome/free-solid-svg-icons';
+import {
+  faArrowUp,
+  faChevronUp,
+  faAngleUp,
+} from '@fortawesome/free-solid-svg-icons';
 
-library.add(faArrowUp,faChevronUp,faAngleUp);
+library.add(faArrowUp, faChevronUp, faAngleUp);
 
-export default class ScrollButton extends Component {
-  constructor(props) {
-    super(props);
-    
-    this.state = {
+const ScrollButton = props => {
+  const [isButtonVisible, setIsButtonVisible] = useState(false);
+  const [componentProps, setComponentProps] = useState({
+    targetId: props.targetId,
+    behavior: props.behavior,
+    buttonBackgroundColor: props.buttonBackgroundColor,
+    buttonColor: props.buttonColor,
+    iconType: props.iconType,
+    scrollSpeed: props.scrollSpeed,
+    style: props.style,
+  });
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleOnScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleOnScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    setComponentProps({
+      ...componentProps,
       targetId: props.targetId,
-      behavior: props.behavior,
-      buttonBackgroundColor: props.buttonBackgroundColor,
-      buttonColor: props.buttonColor,
-      iconType: props.iconType,
-      scrollSpeed: props.scrollSpeed,
-      isButtonShow: false,
-      style: props.style
-    }
+    });
+  }, [props.targetId]);
 
-    this.handleOnScroll= this.handleOnScroll.bind(this);
-    this.handleOnPress= this.handleOnPress.bind(this);
-  }
+  const handleOnScroll = () => {
+    setIsButtonVisible(window.scrollY > 90);
+  };
 
-  componentWillReceiveProps(nextProps) {
-    this.setState({
-      targetId: nextProps.targetId
-    })
-  }
-
-  componentDidMount(){
-    window.addEventListener('scroll',this.handleOnScroll);
-  }
-
-  componentWillMount(){
-    window.removeEventListener('scroll',this.handleOnScroll);
-  }
-
-  handleOnScroll(){
-    const {isButtonShow} = this.state;
-    
-    if (!isButtonShow) {
-      if (window.scrollY > 90) {
-        this.setState({
-          isButtonShow: true
-        })
-      }
-    } else {
-      if (window.scrollY < 90) {
-        this.setState({
-          isButtonShow: false
-        })
-      }
-    }    
-  }
-
-  handleOnPress() {
-    const { targetId, behavior } = this.state;
-    let targetDiv = document.getElementById(`${targetId}`);
-    if (targetDiv !== null && targetDiv !== undefined) {
-      targetDiv.scrollIntoView({behavior: behavior});
+  const handleOnPress = () => {
+    const { targetId, behavior } = componentProps;
+    const targetArea = document.getElementById(`${targetId}`);
+    if (targetArea) {
+      targetArea.scrollIntoView({ behavior });
     }
   };
 
-  render() {
-    let RenderScrollButton = ({handleOnPress,config}) => {
-      const {isButtonShow} = config;
-
-      return (
-            isButtonShow &&
-            <ButtonDefaultStyle
-                onClick={handleOnPress}
-                buttonColor = {config.buttonColor}
-                buttonBackgrundColor = {config.buttonBackgroundColor}
-                scrollSpeed = {config.scrollSpeed}
-                style = {config.style}
-                >
-                <FontAwesomeIcon icon={config.iconType}/>
-            </ButtonDefaultStyle>      
-      )
-    }
-    return (
-      <RenderScrollButton config={this.state} handleOnPress={this.handleOnPress} />
+  const ScrollButtonWrapper = ({ handleOnPress, config }) => {
+    return isButtonVisible ? (
+      <ButtonDefaultStyle
+        onClick={handleOnPress}
+        buttonColor={config.buttonColor}
+        buttonBackgrundColor={config.buttonBackgroundColor}
+        scrollSpeed={config.scrollSpeed}
+        style={config.style}
+      >
+        <FontAwesomeIcon icon={config.iconType} />
+      </ButtonDefaultStyle>
+    ) : (
+      <></>
     );
-  }
-}
+  };
+
+  return (
+    <ScrollButtonWrapper
+      config={componentProps}
+      handleOnPress={handleOnPress}
+    />
+  );
+};
 
 const buttonAnimate = keyframes`
     0% {
@@ -98,21 +83,21 @@ const buttonAnimate = keyframes`
     }
 `;
 
-const ButtonDefaultStyle = styled.button `
-  background-color: ${(props) => props.buttonBackgrundColor};
-  color: ${(props) => props.buttonColor};
+const ButtonDefaultStyle = styled.button`
+  background-color: ${props => props.buttonBackgrundColor};
+  color: ${props => props.buttonColor};
   position: fixed;
-  right:0;
-  bottom:0;
+  right: 0;
+  bottom: 0;
   margin-bottom: 2%;
-  border:none;
-  height:35px;
+  border: none;
+  height: 35px;
   width: 35px;
   border-radius: 50%;
   cursor: pointer;
-  outline:0;
+  outline: 0;
   animation: ${buttonAnimate};
-  animation-duration:  ${(props) => props.scrollSpeed};
+  animation-duration: ${props => props.scrollSpeed};
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   display: flex;
@@ -127,16 +112,17 @@ ScrollButton.propTypes = {
   buttonColor: PropTypes.string,
   iconType: PropTypes.string,
   scrollSpeed: PropTypes.string,
-  style: PropTypes.object
+  style: PropTypes.object,
 };
 
 ScrollButton.defaultProps = {
   behavior: 'auto',
-  buttonBackgroundColor: 'green',  
+  buttonBackgroundColor: 'green',
   buttonColor: 'white',
   iconType: 'chevron-up',
   targetId: '',
   scrollSpeed: '1s',
-  style: {}
+  style: {},
 };
 
+export default ScrollButton;

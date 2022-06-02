@@ -1,33 +1,33 @@
 const path = require('path');
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const htmlWebpackPlugin = new HtmlWebpackPlugin({
-    template: path.join(__dirname, "example/src/index.html"),
-    filename: "./index.html"
+  template: path.join(__dirname, 'example/src/index.html'),
+  filename: './index.html',
 });
 module.exports = {
-    entry: path.join(__dirname, "example/src/index.js"),
-    module: {
-        rules: [
-            {
-                test: /\.(js|jsx)$/,
-                use: "babel-loader",
-                exclude: /node_modules/
-            },
-            {
-                test: /\.css$/,
-                use: ["style-loader", "css-loader"]
-            }
-        ]
-    },
-    output: {
-        path: path.join(__dirname, "example/dist"),
-        filename: "bundle.js"
-    },
-    plugins: [htmlWebpackPlugin],
-    resolve: {
-        extensions: [".js", ".jsx"]
-    },
-    devServer: {
-        port: 3001
-    }
+  entry: path.join(__dirname, 'example/src/index.js'),
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        use: 'babel-loader',
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+    ],
+  },
+  output: {
+    path: path.join(__dirname, 'example/dist'),
+    filename: 'bundle.js',
+  },
+  plugins: [htmlWebpackPlugin],
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
+  devServer: {
+    port: 3001,
+  },
 };
