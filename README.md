@@ -21,9 +21,9 @@ import ScrollButton from 'react-scroll-button';
 const ScrollComponent = () => {
   return (
     <ScrollButton
-      behavior='smooth'
-      buttonBackgroundColor='red'
-      iconType='arrow-up'
+      behavior="smooth"
+      buttonBackgroundColor="red"
+      iconType="arrowUp"
       style={{ fontSize: '24px' }}
     />
   );
@@ -32,15 +32,16 @@ const ScrollComponent = () => {
 
 ### Properties
 
-| Property              | Description                                   | DefaultValue | Type   |
-| --------------------- | --------------------------------------------- | ------------ | ------ |
-| targetId              | Id of element that you want to go             | ''           | string |
-| behavior              | Scroll type. 'auto', 'smooth'                 | auto         | string |
-| buttonBackgroundColor | BackgroundColor of button                     | 'green'      | string |
-| buttonColor           | Color of icon                                 | 'white'      | string |
-| iconType              | Icon type 'chevron-up', 'angle-up','arrow-up' | chevron-up   | string |
-| scrollSpeed           | It specifies speed of scroll button.          | '1s'         | string |
-| style                 | Write custom css properties                   | { }          | object |
+| Property              | Description                                                              | DefaultValue | Type   |
+| --------------------- | ------------------------------------------------------------------------ | ------------ | ------ |
+| targetId              | Id of element that you want to go                                        | ''           | string |
+| behavior              | Scroll type. 'auto', 'smooth'                                            | auto         | string |
+| buttonBackgroundColor | BackgroundColor of button                                                | 'green'      | string |
+| buttonColor           | Color of icon                                                            | 'white'      | string |
+| iconType              | Icon type 'up','arrowUp', 'caretUp'                                      | 'up'         | string |
+| scrollSpeed           | It specifies speed of the scroll button.                                     | '1s'         | string |
+| buttonVisibleHeight   | It specifies that the scroll button will be visible at what height on the page | 50           | number |
+| style                 | Write custom css properties                                              | { }          | object |
 
 License
 MIT

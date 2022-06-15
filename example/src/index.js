@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { render } from 'react-dom';
+import React, { useState, StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
 import ScrollButton from '../../src';
 import './index.css';
 
@@ -14,7 +14,7 @@ const items = [
   { name: 'lightgreen', value: 'lightgreen' },
 ];
 
-const Example = () => {
+ const Example = () => {
   const [targetId, setTargetId] = useState('red');
 
   const handleAreaId = e => {
@@ -68,11 +68,18 @@ const Example = () => {
         behavior="smooth"
         buttonBackgroundColor="#CD5252"
         buttonColor="#fff"
-        iconType="arrow-up"
+        iconType="up"
         scrollSpeed="0.5s"
       />
     </div>
   );
 };
 
-render(<Example />, document.getElementById('root'));
+const rootElement =
+  document.getElementById('root') || document.createElement('div');
+const root = createRoot(rootElement);
+root.render(
+  <StrictMode>
+    <Example />
+  </StrictMode>,
+);

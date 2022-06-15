@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styled, { keyframes } from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import {
-  faArrowUp,
-  faChevronUp,
-  faAngleUp,
-} from '@fortawesome/free-solid-svg-icons';
+import { UpOutlined, ArrowUpOutlined, CaretUpFilled } from '@ant-design/icons';
 
-library.add(faArrowUp, faChevronUp, faAngleUp);
+const iconTypes = {
+  up: <UpOutlined />,
+  arrowUp: <ArrowUpOutlined />,
+  caretUp: <CaretUpFilled />,
+};
 
 const ScrollButton = props => {
   const [isButtonVisible, setIsButtonVisible] = useState(false);
@@ -39,7 +37,7 @@ const ScrollButton = props => {
   }, [props.targetId]);
 
   const handleOnScroll = () => {
-    setIsButtonVisible(window.scrollY > 90);
+    setIsButtonVisible(window.scrollY > props.buttonVisibleHeight);
   };
 
   const handleOnPress = () => {
@@ -59,7 +57,7 @@ const ScrollButton = props => {
         scrollSpeed={config.scrollSpeed}
         style={config.style}
       >
-        <FontAwesomeIcon icon={config.iconType} />
+        {iconTypes[config.iconType]}
       </ButtonDefaultStyle>
     ) : (
       <></>
@@ -113,16 +111,18 @@ ScrollButton.propTypes = {
   iconType: PropTypes.string,
   scrollSpeed: PropTypes.string,
   style: PropTypes.object,
+  buttonVisibleHeight: PropTypes.number,
 };
 
 ScrollButton.defaultProps = {
   behavior: 'auto',
   buttonBackgroundColor: 'green',
   buttonColor: 'white',
-  iconType: 'chevron-up',
+  iconType: 'up',
   targetId: '',
   scrollSpeed: '1s',
   style: {},
+  buttonVisibleHeight: 50,
 };
 
 export default ScrollButton;
