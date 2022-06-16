@@ -7,11 +7,12 @@
   "typings": "dist/index",
   "scripts": {
     "test": "jest",
+    "test:coverage": "jest --coverage",
     "start": "webpack-dev-server --mode development",
     "transpile": "babel src -d dist --copy-files",
     "build": "webpack --mode production",
     "deploy": "gh-pages -d example/dist",
-    "publish-demo": "npm run build && npm run deploy"
+    "publish-demo": "npm run test && npm run build && npm run deploy"
   },
   "bugs": {
     "url": "https://github.com/isagul/react-scroll-button/issues"
@@ -44,6 +45,7 @@
     "jest": "^28.1.1",
     "jest-environment-jsdom": "^28.1.1",
     "jest-transform-stub": "^2.0.0",
+    "jsdom": "^19.0.0",
     "prop-types": "^15.7.2",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",

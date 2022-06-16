@@ -56,6 +56,7 @@ const ScrollButton = props => {
         buttonBackgrundColor={config.buttonBackgroundColor}
         scrollSpeed={config.scrollSpeed}
         style={config.style}
+        data-testid="scrollButton"
       >
         {iconTypes[config.iconType]}
       </ButtonDefaultStyle>
